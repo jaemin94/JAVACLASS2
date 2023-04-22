@@ -7,11 +7,7 @@ public class main {
 		// TODO Auto-generated method stub
 
 		
-<<<<<<< HEAD
-		
-=======
-		retest
->>>>>>> branch 'jaemin' of https://github.com/jaemin94/JAVACLASS2.git
+
 	}
 
 }
