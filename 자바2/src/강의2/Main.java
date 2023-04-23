@@ -1,41 +1,22 @@
 package 강의2;
 
 
-class People {
-    String name;
-     int age;
-    final String juminNumber;
-    final String gender;
-
-    People(String name, int age, String juminNumber, String gender) {
-        this.name = name;
-        this.age = age;
-        this.juminNumber = juminNumber;
-        this.gender = gender;
-    }
-  public String toString()
-    {
-    	return "이름:" + name +"\t나이:" + age +"\t주민번호:" +juminNumber + "\t성별"+gender;
-    }
-}
 
 public class Main {
 
 public static void main(String[] args) {
 	// TODO Auto-generated method stub
-
-	People[] list = new People[5];
 	
-	list[0] = new People("홍길동1",25,"000825-3456789","남자");
-	list[1] = new People("홍길동2",30,"950825-1456789","남자");
-	list[2] = new People("홍길동3",25,"000825-4456789","여자");
-	list[3] = new People("홍길동4",25,"000825-2456789","여자");
-	list[4] = new People("홍길동5",25,"000825-2456789","여자");
+	serverConnection con = serverConnection.getInstance();
 	
-	for(People p : list)
-	{
-		System.out.println(p.toString());
-	}
+	serverConnection con1 = serverConnection.getInstance();
+	serverConnection con2 = serverConnection.getInstance();
+	serverConnection con3 = serverConnection.getInstance();
+	
+	System.out.println(con);
+	System.out.println(con1);
+	System.out.println(con2);
+	System.out.println(con3);
 }
 }
 
