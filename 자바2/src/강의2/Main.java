@@ -1,10 +1,11 @@
 package 강의2;
 
+
 class People {
-    private String name;
-    private int age;
-    private String juminNumber;
-    private String gender;
+    String name;
+     int age;
+    final String juminNumber;
+    final String gender;
 
     People(String name, int age, String juminNumber, String gender) {
         this.name = name;
@@ -12,42 +13,10 @@ class People {
         this.juminNumber = juminNumber;
         this.gender = gender;
     }
-
-   String getName() {
-        return name;
+  public String toString()
+    {
+    	return "이름:" + name +"\t나이:" + age +"\t주민번호:" +juminNumber + "\t성별"+gender;
     }
-
-   void setName(String name) {
-        this.name = name;
-    }
-
-    int getAge() {
-        return age;
-    }
-
-   void setAge(int age) {
-        this.age = age;
-    }
-
-   String getJuminNumber() {
-        return juminNumber;
-    }
-
-   void setJuminNumber(String juminNumber) {
-        this.juminNumber = juminNumber;
-    }
-
-    String getGender() {
-        return gender;
-    }
-
-   void setGender(String gender) {
-        this.gender = gender;
-    }
-   
-   public String toString() {
-       return "이름 : " + name + " 나이: " + age + " 주민번호: " + juminNumber + " 성별: " + gender;
-   }
 }
 
 public class Main {
@@ -55,18 +24,18 @@ public class Main {
 public static void main(String[] args) {
 	// TODO Auto-generated method stub
 
+	People[] list = new People[5];
 	
-	People[] peopleArray = {
-            new People("홍길동1", 25, "000825-3456789", "남자"),
-            new People("홍길동2", 30, "950825-1456789", "남자"),
-            new People("홍길동3", 25, "000825-4456789", "여자"),
-            new People("홍길동4", 25, "000825-2456789", "여자"),
-            new People("홍길동5", 25, "000825-2456789", "여자")
-    };
-
-    for (People person : peopleArray) {
-        System.out.println(person.toString());
-    }
+	list[0] = new People("홍길동1",25,"000825-3456789","남자");
+	list[1] = new People("홍길동2",30,"950825-1456789","남자");
+	list[2] = new People("홍길동3",25,"000825-4456789","여자");
+	list[3] = new People("홍길동4",25,"000825-2456789","여자");
+	list[4] = new People("홍길동5",25,"000825-2456789","여자");
+	
+	for(People p : list)
+	{
+		System.out.println(p.toString());
+	}
 }
 }
 
@@ -79,21 +48,27 @@ Phone(String phoneNumber) {
     this.phoneNumber = phoneNumber;
 }
 
-void makeCall(String number) {
-    System.out.println("Calling " + number + "...");
-}
 }
 
-class Galaxy extends Phone {
-public Galaxy(String phoneNumber) {
-    super(phoneNumber);
-}
+class Galaxy extends Phone
+{
+
+	Galaxy(String phoneNumber) 
+	{
+		super(phoneNumber);
+		
+	}
+	
+
 }
 
-class IPhone extends Phone {
-public IPhone(String phoneNumber) {
-    super(phoneNumber);
-}
+class IPhone extends Phone
+{
+
+	IPhone(String phoneNumber) 
+	{
+	    super(phoneNumber);
+	}
 }
 
 /*Phone 클래스는 객체화 될 필요가 있습니다. 
@@ -113,10 +88,10 @@ public static void main(String[] args) {
 
 
 class People {
-    private String name;
-    private int age;
-    private String juminNumber;
-    private String gender;
+    String name;
+     int age;
+    final String juminNumber;
+    final String gender;
 
     People(String name, int age, String juminNumber, String gender) {
         this.name = name;
@@ -125,37 +100,6 @@ class People {
         this.gender = gender;
     }
 
-   String getName() {
-        return name;
-    }
-
-   void setName(String name) {
-        this.name = name;
-    }
-
-    int getAge() {
-        return age;
-    }
-
-   void setAge(int age) {
-        this.age = age;
-    }
-
-   String getJuminNumber() {
-        return juminNumber;
-    }
-
-   void setJuminNumber(String juminNumber) {
-        this.juminNumber = juminNumber;
-    }
-
-    String getGender() {
-        return gender;
-    }
-
-   void setGender(String gender) {
-        this.gender = gender;
-    }
 }
 
 public class 실습1_2 {
@@ -171,10 +115,10 @@ name, age, juminNumber, gender 멤버 변수에는 private 접근 제어자를
 이때, getter 메소드는 해당 변수의 값을 반환하며, setter 메소드는 해당 변수의 값을 변경합니다.
 
 class People {
-    private String name;
-    private int age;
-    private String juminNumber;
-    private String gender;
+    String name;
+     int age;
+    final String juminNumber;
+    final String gender;
 
     People(String name, int age, String juminNumber, String gender) {
         this.name = name;
@@ -182,42 +126,10 @@ class People {
         this.juminNumber = juminNumber;
         this.gender = gender;
     }
-
-   String getName() {
-        return name;
+  public String toString()
+    {
+    	return "이름:" + name +"\t나이:" + age +"\t주민번호:" +juminNumber + "\t성별"+gender;
     }
-
-   void setName(String name) {
-        this.name = name;
-    }
-
-    int getAge() {
-        return age;
-    }
-
-   void setAge(int age) {
-        this.age = age;
-    }
-
-   String getJuminNumber() {
-        return juminNumber;
-    }
-
-   void setJuminNumber(String juminNumber) {
-        this.juminNumber = juminNumber;
-    }
-
-    String getGender() {
-        return gender;
-    }
-
-   void setGender(String gender) {
-        this.gender = gender;
-    }
-   
-   public String toString() {
-       return "이름 : " + name + " 나이: " + age + " 주민번호: " + juminNumber + " 성별: " + gender;
-   }
 }
 
 public class Main {
@@ -225,18 +137,18 @@ public class Main {
 public static void 실습1_3(String[] args) {
 	// TODO Auto-generated method stub
 
+	People[] list = new People[5];
 	
-	People[] peopleArray = {
-            new People("홍길동1", 25, "000825-3456789", "남자"),
-            new People("홍길동2", 30, "950825-1456789", "남자"),
-            new People("홍길동3", 25, "000825-4456789", "여자"),
-            new People("홍길동4", 25, "000825-2456789", "여자"),
-            new People("홍길동5", 25, "000825-2456789", "여자")
-    };
-
-    for (People person : peopleArray) {
-        System.out.println(person.toString());
-    }
+	list[0] = new People("홍길동1",25,"000825-3456789","남자");
+	list[1] = new People("홍길동2",30,"950825-1456789","남자");
+	list[2] = new People("홍길동3",25,"000825-4456789","여자");
+	list[3] = new People("홍길동4",25,"000825-2456789","여자");
+	list[4] = new People("홍길동5",25,"000825-2456789","여자");
+	
+	for(People p : list)
+	{
+		System.out.println(p.toString());
+	}
 }
 }
 
