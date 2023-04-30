@@ -32,3 +32,7 @@ public class Sword extends Weapon implements Repairable{
     }
 }
 
+//public void repaired()
+//{
+//	this.durability+=2;
+//}

@@ -7,6 +7,7 @@ public class main {
 
 		User user1 = new User("랭킹1위가자",100,new Gun(10,5));
 		User user2 = new User("똥겜망해라",70,new Sword(15,10));
+		User user3 = new User("똥겜망해라2",70,new Punch(2,1));
 		
 		
 		
@@ -15,11 +16,12 @@ public class main {
 		user1.attack(user2);
 		user1.attack(user2);
 		user1.attack(user2);
-		user1.attack(user2);
-		user1.attack(user2);
+		user3.attack(user2);
+		user3.attack(user2);
 		
 		System.out.println(user1.toString());
 		System.out.println(user2.toString());
+		System.out.println(user3.toString());
 		
 		BlackSmith bm = new BlackSmith();
 		
@@ -28,6 +30,9 @@ public class main {
 		
 		bm.repair(user2.weapon);
 		System.out.println(user2.toString());
+		
+		bm.repair(user3.weapon);
+		System.out.println(user3.toString());
 	}
 
 }

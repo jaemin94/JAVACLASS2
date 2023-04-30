@@ -4,3 +4,6 @@ public interface Repairable {
 	
 	int repair();
 }
+
+
+//void repaired();
