@@ -10,13 +10,16 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String data = "{이름:홍길동, 나이:55, 성별:남, 주소:서울특별시 양천구 목동, 특기:[검술,코딩], 가족관계:{#:2, 아버지:홍판서, 어머니:춘섭},회사:경기 수원시 팔달구 우만동}";
+		String data = "{id:chatcmpl-6vX5cfe1VRa29F7AzS8kBmYjbh4Im,object:chat.completion,created:1679169912,model:gpt-3.5-turbo-0301,usage:{prompt_tokens:11,completion_tokens:32,total_tokens:43},choices:[{message:{role:assistant,content:하세요! 저는 AI 어시스턴트입니다. 어떤 도움이 필요하신가요?},finish_reason:stop,index:0}]}";
+		
 		JSONObject json = new JSONObject(data);
 
-		JSONArray hobby = json.getJSONArray("취미");
+		JSONArray choices = json.getJSONArray("choices");
+		JSONObject firstChoice = choices.getJSONObject(0);
+		JSONObject message = firstChoice.getJSONObject("message");
 
-		String temp = hobby.get(1).toString();
-		System.out.println(temp);
+        String content = message.getString("content");
+        System.out.println(content);
 	}
 
 }
@@ -142,5 +145,19 @@ public static void 실습1_4.1(String[] args) {
 	}
 
 }
+
+public static void 실습2_1(String[] args) {
+		// TODO Auto-generated method stub
+		String data = "{이름:홍길동, 나이:55, 성별:남, 주소:서울특별시 양천구 목동, 특기:[검술,코딩], 가족관계:{\"#\":2, 아버지:홍판서, 어머니:춘섭},회사:경기 수원시 팔달구 우만동}";
+		JSONObject json = new JSONObject(data);
+
+		JSONArray hobby = json.getJSONArray("특기");
+
+		String temp = hobby.get(1).toString();
+		System.out.println(temp);
+	}
+
+}
+
 
 */
