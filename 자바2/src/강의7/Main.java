@@ -1,14 +1,7 @@
 package 강의7;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.FileOutputStream;
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-
-import org.json.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 
 
@@ -19,9 +12,9 @@ public class Main {
 		// TODO Auto-generated method stub
 		String data = "{이름:홍길동, 나이:55, 성별:남, 주소:서울특별시 양천구 목동, 특기:[검술,코딩], 가족관계:{#:2, 아버지:홍판서, 어머니:춘섭},회사:경기 수원시 팔달구 우만동}";
 		JSONObject json = new JSONObject(data);
-		
+
 		JSONArray hobby = json.getJSONArray("취미");
-		
+
 		String temp = hobby.get(1).toString();
 		System.out.println(temp);
 	}
@@ -35,17 +28,17 @@ public static void 실습1_1(String[] args) {
 	// TODO Auto-generated method stub
 
 	try {
-		
+
 	File file = new File("C:\\Users\\User\\Desktop\\자바2\\깃허브\\JAVACLASS2\\자바2\\src\\강의7\\test.txt");
-	
+
 	InputStream stream = new FileInputStream(file);
-	
+
 	int data =0;
 	while((data=stream.read()) != -1)
 	{
 		System.out.print((char)data);
 	}
-	
+
 	stream.close();
 	}catch(Exception ex)
 	{
@@ -59,22 +52,22 @@ public static void 실습1_2(String[] args) {
 		// TODO Auto-generated method stub
 
 		try {
-			
+
 		File originalFile = new File("C:\\Users\\User\\Desktop\\자바2\\깃허브\\JAVACLASS2\\자바2\\src\\강의7\\test.txt");
 		File copyFile = new File("C:\\Users\\User\\Desktop\\자바2\\깃허브\\JAVACLASS2\\자바2\\src\\강의7\\test_copy.txt");
-		
+
 		InputStream stream = new FileInputStream(originalFile);
 		OutputStream outStream = new FileOutputStream(copyFile);
-		
+
 		int data =0;
-		
+
 		while((data=stream.read()) != -1
 		{
 			outstream.write(data);
 		}
 		stream.close();
 		outStream.close();
-		
+
 		}catch(Exception ex)
 		{
 			System.out.println(ex.toString());
@@ -86,22 +79,22 @@ public static void 실습1_2(String[] args) {
 public static void 실습1_3(String[] args) {
 		// TODO Auto-generated method stub
 		  try {
-			
+
 			File originalFile = new File("C:\\Users\\User\\Desktop\\자바2\\깃허브\\JAVACLASS2\\자바2\\src\\강의7\\레서판다.jpg");
 			File copyFile = new File("C:\\Users\\User\\Desktop\\자바2\\깃허브\\JAVACLASS2\\자바2\\src\\강의7\\레서판다_copy.jpg");
-			
+
 			InputStream stream = new FileInputStream(originalFile);
 			OutputStream outStream = new FileOutputStream(copyFile);
-			
+
 			int data =0;
-			
+
 			while((data=stream.read()) != -1)//복사하는 기능
 			{
 				outStream.write(data);
 			}
 			stream.close();
 			outStream.close();
-			
+
 			}catch(Exception ex)
 			{
 				System.out.println(ex.toString());
@@ -113,18 +106,18 @@ public static void 실습1_3(String[] args) {
 public static void 실습1_4.1(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			
+
 			File file = new File("C:\\Users\\User\\Desktop\\자바2\\깃허브\\JAVACLASS2\\자바2\\src\\강의7\\test.txt");
-			
+
 			InputStream stream = new FileInputStream(file);
 			BufferedInputStream bStream = new BufferedInputStream(stream);
-			
+
 			int data =0;
 			while((data=bStream.read()) != -1)
 			{
 				System.out.print((char)data);
 			}
-			
+
 			bStream.close();
 			}catch(Exception ex)
 			{
@@ -134,12 +127,12 @@ public static void 실습1_4.1(String[] args) {
 	public static void 실습1_4.2(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			
+
 			File file = new File("C:\\Users\\User\\Desktop\\자바2\\깃허브\\JAVACLASS2\\자바2\\src\\강의7\\test_copy.jpg");
-			
+
 			OutputStream stream = new FileOutputStream(file,true);
 			BufferedOutputStream bStream = new BufferedOutputStream(stream);
-			
+
 			bStream.write("testing outputstream2".getBytes());
 			bStream.close();
 			}catch(Exception ex)
