@@ -10,7 +10,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String data = "{id:chatcmpl-6vX5cfe1VRa29F7AzS8kBmYjbh4Im,object:chat.completion,created:1679169912,model:gpt-3.5-turbo-0301,usage:{prompt_tokens:11,completion_tokens:32,total_tokens:43},choices:[{message:{role:assistant,content:하세요! 저는 AI 어시스턴트입니다. 어떤 도움이 필요하신가요?},finish_reason:stop,index:0}]}";
+		String data = "{id:chatcmpl-6vX5cfe1VRa29F7AzS8kBmYjbh4Im"
+				+",object:chat.completion,created:1679169912"
+				+ ",model:gpt-3.5-turbo-0301,"
+				+ "usage:{prompt_tokens:11,completion_tokens:32,total_tokens:43}"
+				+ ",choices:[{message:{role:assistant"
+				+ ",content:안녕하세요! 저는 AI 어시스턴트입니다. 어떤 도움이 필요하신가요?}"
+				+ ",finish_reason:stop,index:0}]}";
 		
 		JSONObject json = new JSONObject(data);
 
