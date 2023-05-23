@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/User/Desktop/자바2/강의7/json-20210307.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/임베디드_이재민/자바2/자바2/강의7/json-20210307.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
