@@ -15,8 +15,9 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 
 		try {
-			gpt.connect();
 			while (true) {
+			gpt.connect();
+			
 				System.out.print("나: ");
 				String message = scanner.nextLine();
 				if (message.equals("대화종료")) {
