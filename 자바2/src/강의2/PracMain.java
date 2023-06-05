@@ -5,23 +5,16 @@ public class PracMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		PracPeople[] p1 = new PracPeople[5];
+		PracServerConnection con = PracServerConnection.getInstance();
 		
-		PracTime t = new PracTime();
+		PracServerConnection con1 = PracServerConnection.getInstance();
+		PracServerConnection con2 = PracServerConnection.getInstance();
+		PracServerConnection con3 = PracServerConnection.getInstance();
 		
-		t.setHour(30);
-		System.out.println(t.hour);
-		
-		System.out.println(t.toString());
-		
-		t.setHour(20);
-		System.out.println(t.toString());
-		
-		t.setMinute(-50);
-		System.out.println(t.toString());
-		
-		t.setMinute(50);
-		System.out.println(t.toString());
+		System.out.println(con);
+		System.out.println(con1);
+		System.out.println(con2);
+		System.out.println(con3);
 	
 	}
 	
