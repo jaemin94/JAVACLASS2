@@ -2,6 +2,9 @@ package 강의8;
 
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.json.*;
 
 public class ChatGpt {
@@ -11,6 +14,7 @@ public class ChatGpt {
 	private JSONObject sendMsg = new JSONObject();
 	private JSONArray chatHistory = new JSONArray();
     
+	public static List<String> endword = new ArrayList();
 
 	public ChatGpt(String key) {
 		this.key = key;

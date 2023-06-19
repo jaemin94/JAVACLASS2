@@ -5,12 +5,13 @@ import java.net.*;
 import java.util.Scanner;
 import org.json.*;
 
+
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String key = "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";
+		String key = "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";
 		ChatGpt gpt = new ChatGpt(key);
 		Scanner scanner = new Scanner(System.in);
 
@@ -26,6 +27,7 @@ public class Main {
 				gpt.send(message);
 
 				String response = gpt.receive();
+				ChatGpt.endword.add(gpt.parseJsonMsg(message));
 				// 대화종료조건확인
 
 				// 응답을 출력한다.
