@@ -1,9 +1,6 @@
 package 강의8;
 
-import java.io.*;
-import java.net.*;
 import java.util.Scanner;
-import org.json.*;
 
 
 public class Main {
@@ -11,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String key = "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";
+		String key = "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";
 		ChatGpt gpt = new ChatGpt(key);
 		Scanner scanner = new Scanner(System.in);
 

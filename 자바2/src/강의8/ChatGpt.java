@@ -1,11 +1,17 @@
 package 강의8;
 
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class ChatGpt {
 
@@ -33,26 +39,33 @@ public class ChatGpt {
         chatHistory.put(obj);
 	}
 
-	public HttpURLConnection connect() {
+	public HttpURLConnection connect()
+	{
+		return connect("https://api.openai.com/v1/chat/completions");
+	}
+	public HttpURLConnection connect(String url) {
 		
-		try {
-			URL url = new URL("https://api.openai.com/v1/chat/completions");
-
-			// 객체화한 url을 통해 http통신을 위한 객체를 생성한다.메서드 방식은 POST 이다.
-			con = (HttpURLConnection) url.openConnection();
+		try
+		{
+			//객체화한 url을 통해 http통신을 위한 객체를 생성한다.메서드 방식은 POST 이다.
+			con = (HttpURLConnection)new URL( url).openConnection();
 			con.setRequestMethod("POST");
-			// http 통신시 데이터 형태는 json이라고 선언
+			//http 통신시 데이터 형태는 json이라고 선언
 			con.setRequestProperty("Content-Type", "application/json; utf-8");
-			// 발급받은 키값을 넣어준다.
-			con.setRequestProperty("Authorization", "Bearer " + key);
-			// chatGPT의 대답이 느릴경우 기다려주는 타임을 설정
-			con.setRequestProperty("Retry-After", "3600");
-			// 데이터 전송을 위해 true로 설정해야 한다.
+			//발급받은 키값을 넣어준다.
+			con.setRequestProperty("Authorization","Bearer "+key);
+			//chatGPT의 대답이 느릴경우 기다려주는 타임을 설정
+			con.setRequestProperty("Retry-After","3600");
+			//데이터 전송을 위해 true로 설정해야 한다.
 			con.setDoOutput(true);
-		} catch (Exception ex) {
+			
+		}catch(Exception ex)
+		{
 			System.out.println(ex.toString());
 		}
+		
 		return con;
+		
 	}
 
 	public void send(OutputStream out, String msg) {
@@ -66,7 +79,7 @@ public class ChatGpt {
 			// 예제 ->
 			// messages\":[{\"role\":\"user\",\"content\":\"안녕\"},{\"role\":\"assistant\",\"content\":\"chatGPT의
 			// 대답\"}]
-			String msg1 = "{\"model\": \"gpt-3.5-turbo\",\"messages\":[{\"role\":\"user\",\"content\":\"" + input
+			String msg1 = "{{\"model\": \"gpt-3.5-turbo\",\"messages\":[{\"role\":\"user\",\"content\":\"" + input
 					+ "\"}]}";
 
 			// 문자열을 보내기전에 utf-8 형태로 인코딩을 변환하고 바이트로 변경한다.
